@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Post</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="post.css">
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseApp = firebase.initializeApp({
+        apiKey: "AIzaSyBi1EUsSiIGmnNfQE8gRzbUz090P03-gcI",
+        authDomain: "algologs-4cd95.firebaseapp.com",
+        databaseURL: "https://algologs-4cd95-default-rtdb.firebaseio.com",
+        projectId: "algologs-4cd95",
+        storageBucket: "algologs-4cd95.appspot.com",
+        messagingSenderId: "740713409179",
+        appId: "1:740713409179:web:0f9ec1afe54f3d5b0b743e",
+        measurementId: "G-Q74NY2MXTW"
+      });
+      const db = firebaseApp.firestore();
+      const auth = firebaseApp.auth();
+      // db.doc("posts/500").get().then((ss)=>{
+      //   console.log(ss.data());
+      // })
+    </script>
+  </head>
+  <div>
+    <div style="display: none" id="postForm">
+      <div class="jumbotron text-center">
+          <h1>Post</h1>
+      </div>
+      <div class="container">
+      <div class="row">
+          <div class="col-md-10">
+            <div id="form">
+                  <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" placeholder="Author">
+                  </div>
+                <div class="form-group">
+                  <label for="id">ID</label>
+                  <input type="text" class="form-control" id="id" placeholder="ID">
+                </div>
+                <div class="form-group">
+                  <label for="Title">Title</label>
+                  <input type="text" class="form-control" id="title" placeholder="Title">
+                </div>
+                <div class="form-group">
+                  <label for="intro">Intro</label>
+                  <input type="text" class="form-control" id="intro" placeholder="Intro">
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <input type="text" class="form-control" id="description" placeholder="Description">
+                </div>
+                <div class="form-group">
+                  <label for="keyword">Keyword</label>
+                  <textarea type="text" class="form-control" id="keyword" placeholder="Keyword"></textarea>
+                  <div id="keywords" class="tipbox"></div>
+                </div>
+                <div class="form-group">
+                  <label for="related">Related Posts ID</label>
+                  <textarea type="text" class="form-control" id="related" placeholder="Related Posts ID"></textarea>
+                  <div id="relID" class="tipbox"></div>
+                </div>
+                <div class="form-group">
+                  <label for="tag">Tags</label>
+                  <textarea type="text" class="form-control" id="tag" placeholder="Tags"></textarea>
+                  <div id="tags" class="tipbox"></div>
+                </div>
+                <div class="form-group">
+                  <label for="content">Content</label>
+                  <textarea type="text" class="form-control" id="content" placeholder="Write your post"></textarea>
+                </div>
+                <button type="submit" id="submit" class="btn btn-primary" onclick="data()">Submit</button>
+                <button type="submit" id="logout" class="btn btn-danger">Log Out</button>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+    <div class="container" id="loginForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div>
+            .<div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="@email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <button id="login" class="btn btn-primary" onclick="login()">Log In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="post.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
